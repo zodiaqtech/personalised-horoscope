@@ -80,15 +80,21 @@ jobs:
           images:    ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       # ── 6. Verify ──────────────────────────────────────────────────────────
-      - name: Health check
+      # Azure App Service takes 2-3 min to pull the image and start the container.
+      # Retry every 20s for up to 3 minutes before failing.
+      - name: Health check (retry 3 min)
         run: |
-          echo "Waiting 30s for container to start..."
-          sleep 30
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/v1/health)
-          echo "Health check status: $STATUS"
-          if [ "$STATUS" != "200" ]; then
-            echo "Health check failed with status $STATUS"
-            exit 1
-          fi
-          echo "Deployment successful ✓"
+          URL="https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/v1/health"
+          echo "Polling $URL ..."
+          for i in $(seq 1 9); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$URL" || echo "000")
+            echo "Attempt $i/9 — HTTP $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              echo "✓ App is healthy"
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "Health check did not return 200 after 3 minutes."
+          echo "Check App Service logs: az webapp log tail --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}"
+          exit 1
