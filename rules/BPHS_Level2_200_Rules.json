@@ -1,0 +1,3883 @@
+[
+  {
+    "_comment": "=== A. DASHA RULES (House Lordship) ===",
+    "_note": "Mahadasha/Antardasha lord activates the significations of houses they own"
+  },
+  {
+    "id": "D001",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        1
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Lagna lord dasha: Self-development, health, personality enhancement"
+  },
+  {
+    "id": "D002",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        2
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "2nd lord dasha: Wealth accumulation, family matters, speech"
+  },
+  {
+    "id": "D003",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        3
+      ]
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "3rd lord dasha: Courage, efforts, siblings, communication, short travels"
+  },
+  {
+    "id": "D004",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        4
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "4th lord dasha: Home, mother, vehicles, inner peace, education"
+  },
+  {
+    "id": "D005",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        5
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 3,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "5th lord dasha: Children, romance, creativity, intelligence, past merit"
+  },
+  {
+    "id": "D006",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        6
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "6th lord dasha (dusthana): Disease, enemies, debts, service - challenges and conflicts"
+  },
+  {
+    "id": "D007",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        7
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 3,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "7th lord dasha: Marriage, partnerships, business, spouse, public dealings"
+  },
+  {
+    "id": "D008",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        8
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -3,
+      "mental": -2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "8th lord dasha (dusthana): Transformation, longevity, obstacles, occult, sudden events"
+  },
+  {
+    "id": "D009",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        9
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "9th lord dasha: Fortune, dharma, higher learning, father, long travels, spirituality"
+  },
+  {
+    "id": "D010",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        10
+      ]
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "10th lord dasha: Career, status, authority, public image, achievements"
+  },
+  {
+    "id": "D011",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        11
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 1,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "11th lord dasha: Gains, income, friends, aspirations, elder siblings"
+  },
+  {
+    "id": "D012",
+    "category": "dasha",
+    "priority": 3,
+    "conditions": {
+      "dasha_lord_owns": [
+        12
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": -2,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "12th lord dasha (dusthana): Expenses, losses, foreign lands, isolation, moksha, enlightenment"
+  },
+  {
+    "_comment": "=== DASHA STRENGTH MODIFIERS ==="
+  },
+  {
+    "id": "D013",
+    "category": "dasha",
+    "priority": 2,
+    "conditions": {
+      "dasha_lord_exalted": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.3,
+    "description": "Dasha lord exalted: Amplifies positive results by 30%"
+  },
+  {
+    "id": "D014",
+    "category": "dasha",
+    "priority": 2,
+    "conditions": {
+      "dasha_lord_own_sign": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.2,
+    "description": "Dasha lord in own sign: Strong, stable results"
+  },
+  {
+    "id": "D015",
+    "category": "dasha",
+    "priority": 2,
+    "conditions": {
+      "dasha_lord_debilitated": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": -1,
+      "health": -1,
+      "mental": -1,
+      "spiritual": -1
+    },
+    "multiplier": 0.6,
+    "description": "Dasha lord debilitated: Weakens results by 40%"
+  },
+  {
+    "id": "D016",
+    "category": "dasha",
+    "priority": 2,
+    "conditions": {
+      "dasha_lord_retrograde": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 0.9,
+    "description": "Dasha lord retrograde: Delays, introspection, revisiting past matters"
+  },
+  {
+    "id": "D017",
+    "category": "dasha",
+    "priority": 2,
+    "conditions": {
+      "dasha_lord_combust": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": -1,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 0.7,
+    "description": "Dasha lord combust: Reduced strength, ego conflicts"
+  },
+  {
+    "_comment": "=== DASHA YOGAKARAKA ==="
+  },
+  {
+    "id": "D018",
+    "category": "dasha",
+    "priority": 1,
+    "conditions": {
+      "dasha_lord_yogakaraka": true
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.5,
+    "description": "Yogakaraka planet dasha: Excellent for material and spiritual progress"
+  },
+  {
+    "_comment": "=== B. TRANSIT RULES (Gochara) ===",
+    "_note": "Transiting planets activate houses they pass through"
+  },
+  {
+    "id": "T001",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 1st: Emotional clarity, self-focus, mood boost"
+  },
+  {
+    "id": "T002",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 2nd: Focus on wealth, family, speech"
+  },
+  {
+    "id": "T003",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 3
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 3rd: Communication, short travels, courage"
+  },
+  {
+    "id": "T004",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 4
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 4th: Home comfort, emotional security, peace"
+  },
+  {
+    "id": "T005",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 5th: Romance, creativity, joy, children"
+  },
+  {
+    "id": "T006",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 6
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 6th: Stress, health issues, conflicts, anxiety"
+  },
+  {
+    "id": "T007",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 7th: Partnership focus, relationship harmony"
+  },
+  {
+    "id": "T008",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -3,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 8th: Emotional turbulence, anxiety, transformation"
+  },
+  {
+    "id": "T009",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 9th: Fortune, spiritual inclination, optimism"
+  },
+  {
+    "id": "T010",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 10th: Career focus, public recognition, ambition"
+  },
+  {
+    "id": "T011",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 0,
+      "finance": 2,
+      "love": 1,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 11th: Gains, fulfillment, social connections"
+  },
+  {
+    "id": "T012",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 12
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Moon transit 12th: Isolation, expenses, spiritual retreat"
+  },
+  {
+    "_comment": "=== SATURN TRANSITS ==="
+  },
+  {
+    "id": "T013",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -1,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 1st (Sade Sati phase 1): Health issues, delays, introspection"
+  },
+  {
+    "id": "T014",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 3
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 3rd: Hard work pays off, courage through discipline"
+  },
+  {
+    "id": "T015",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 6
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 6th: Victory over enemies, disease, and debts through persistence"
+  },
+  {
+    "id": "T016",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 7th: Relationship strain, partnership delays, testing"
+  },
+  {
+    "id": "T017",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": 0,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 8th: Major obstacles, transformation through hardship, longevity tests"
+  },
+  {
+    "id": "T018",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 10th: Career discipline, authority through hard work, recognition"
+  },
+  {
+    "id": "T019",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 11th: Gains through sustained effort, elder support"
+  },
+  {
+    "id": "T020",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Saturn",
+      "transit_house": 12
+    },
+    "effects": {
+      "career": 0,
+      "finance": -2,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Saturn transit 12th (Sade Sati phase 3): Expenses, isolation, spiritual growth, liberation"
+  },
+  {
+    "_comment": "=== JUPITER TRANSITS ==="
+  },
+  {
+    "id": "T021",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 1st: Wisdom, health improvement, optimism, personal growth"
+  },
+  {
+    "id": "T022",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 2nd: Wealth increase, family happiness, eloquent speech"
+  },
+  {
+    "id": "T023",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 4
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 4th: Property gains, mother's well-being, peace of mind"
+  },
+  {
+    "id": "T024",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 3,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 5th: Romance, childbirth, creativity, speculation gains, wisdom"
+  },
+  {
+    "id": "T025",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 3,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 7th: Marriage, partnerships, business success, harmonious relations"
+  },
+  {
+    "id": "T026",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": 0,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 8th: Occult wisdom, inheritance, but also obstacles"
+  },
+  {
+    "id": "T027",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 9th: Fortune, dharma, father's blessings, pilgrimage, higher learning"
+  },
+  {
+    "id": "T028",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 10th: Career advancement, authority, professional success"
+  },
+  {
+    "id": "T029",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Jupiter",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 1,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter transit 11th: Maximum gains, income increase, fulfillment of desires"
+  },
+  {
+    "_comment": "=== MARS TRANSITS ==="
+  },
+  {
+    "id": "T030",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 1st: Energy boost, aggression, accidents, impulsive actions"
+  },
+  {
+    "id": "T031",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": -1,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 2nd: Speech conflicts, financial stress, family disputes"
+  },
+  {
+    "id": "T032",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 3
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 3rd: Courage, initiative, sibling conflicts, vigorous efforts"
+  },
+  {
+    "id": "T033",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 6
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 6th: Victory over enemies, disease, competition"
+  },
+  {
+    "id": "T034",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 7th: Relationship conflicts, partnership disputes"
+  },
+  {
+    "id": "T035",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -3,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 8th: Accidents, surgery, sudden events, danger caution"
+  },
+  {
+    "id": "T036",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 10th: Career drive, leadership, aggressive pursuit of goals"
+  },
+  {
+    "id": "T037",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mars",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars transit 11th: Gains through effort, elder brother support, achievement"
+  },
+  {
+    "_comment": "=== VENUS TRANSITS ==="
+  },
+  {
+    "id": "T038",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 1st: Charm, beauty, attraction, comfort, self-love"
+  },
+  {
+    "id": "T039",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": 2,
+      "love": 1,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 2nd: Wealth from arts, family harmony, sweet speech"
+  },
+  {
+    "id": "T040",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 4
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 4th: Home beautification, vehicle purchase, emotional comfort"
+  },
+  {
+    "id": "T041",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 3,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 5th: Romance peak, creativity, artistic expression, joy"
+  },
+  {
+    "id": "T042",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 3,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 7th: Partnership harmony, marriage prospects, diplomatic success"
+  },
+  {
+    "id": "T043",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 10th: Career in arts/luxury, public image enhancement"
+  },
+  {
+    "id": "T044",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 0,
+      "finance": 3,
+      "love": 2,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Venus transit 11th: Income from luxury, social success, friendships"
+  },
+  {
+    "_comment": "=== MERCURY TRANSITS ==="
+  },
+  {
+    "id": "T045",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 1st: Communication skills, intellectual clarity, wit"
+  },
+  {
+    "id": "T046",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 2nd: Business acumen, financial planning, articulation"
+  },
+  {
+    "id": "T047",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 3
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 3rd: Writing, media, communication, short travels, networking"
+  },
+  {
+    "id": "T048",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 1,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 5th: Intellectual pursuits, education, speculation, teaching"
+  },
+  {
+    "id": "T049",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 9th: Higher learning, philosophy, long distance communication"
+  },
+  {
+    "id": "T050",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mercury transit 10th: Career in communication, business deals, professional networking"
+  },
+  {
+    "_comment": "=== SUN TRANSITS (Key Houses) ==="
+  },
+  {
+    "id": "T051",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Sun transit 1st: Vitality, confidence, self-focus, birthday period"
+  },
+  {
+    "id": "T052",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Sun transit 5th: Creative expression, authority over children, romance, speculation"
+  },
+  {
+    "id": "T053",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Sun transit 9th: Father's support, dharma, fortune, spiritual authority"
+  },
+  {
+    "id": "T054",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Sun transit 10th: Peak career visibility, authority, government favor, recognition"
+  },
+  {
+    "id": "T055",
+    "category": "transit",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Sun transit 11th: Gains from authority figures, income, influential friends"
+  },
+  {
+    "_comment": "=== C. YOGA RULES (Planetary Combinations) ==="
+  },
+  {
+    "id": "Y001",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "raja_yoga",
+      "planets_involved": [
+        "9th_lord",
+        "10th_lord"
+      ]
+    },
+    "effects": {
+      "career": 3,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.5,
+    "description": "Dharma-Karma Raja Yoga: 9th and 10th lords in conjunction/mutual aspect - high status, power"
+  },
+  {
+    "id": "Y002",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "dhana_yoga",
+      "planets_involved": [
+        "2nd_lord",
+        "11th_lord"
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.4,
+    "description": "Dhana Yoga: 2nd and 11th lords together - wealth accumulation"
+  },
+  {
+    "id": "Y003",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "gaja_kesari",
+      "planets_involved": [
+        "Jupiter",
+        "Moon"
+      ]
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 1,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.3,
+    "description": "Gaja Kesari Yoga: Jupiter in kendra from Moon - wisdom, prosperity, respect"
+  },
+  {
+    "id": "Y004",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "budha_aditya",
+      "planets_involved": [
+        "Sun",
+        "Mercury"
+      ]
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 3,
+      "spiritual": 1
+    },
+    "multiplier": 1.2,
+    "description": "Budha-Aditya Yoga: Sun-Mercury conjunction - intelligence, communication skills"
+  },
+  {
+    "id": "Y005",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "hamsa",
+      "planets_involved": [
+        "Jupiter"
+      ],
+      "planet_in_kendra": true,
+      "planet_in_own_exaltation": true
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 1,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 3
+    },
+    "multiplier": 1.5,
+    "description": "Hamsa Mahapurusha Yoga: Jupiter in kendra in own/exaltation - righteous, learned, prosperous"
+  },
+  {
+    "id": "Y006",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "malavya",
+      "planets_involved": [
+        "Venus"
+      ],
+      "planet_in_kendra": true,
+      "planet_in_own_exaltation": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 3,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.5,
+    "description": "Malavya Mahapurusha Yoga: Venus in kendra in own/exaltation - luxury, beauty, arts"
+  },
+  {
+    "id": "Y007",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "ruchaka",
+      "planets_involved": [
+        "Mars"
+      ],
+      "planet_in_kendra": true,
+      "planet_in_own_exaltation": true
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 3,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.5,
+    "description": "Ruchaka Mahapurusha Yoga: Mars in kendra in own/exaltation - warrior, commander, courage"
+  },
+  {
+    "id": "Y008",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "bhadra",
+      "planets_involved": [
+        "Mercury"
+      ],
+      "planet_in_kendra": true,
+      "planet_in_own_exaltation": true
+    },
+    "effects": {
+      "career": 3,
+      "finance": 3,
+      "love": 0,
+      "health": 1,
+      "mental": 3,
+      "spiritual": 1
+    },
+    "multiplier": 1.5,
+    "description": "Bhadra Mahapurusha Yoga: Mercury in kendra in own/exaltation - scholar, businessman, eloquent"
+  },
+  {
+    "id": "Y009",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "shasha",
+      "planets_involved": [
+        "Saturn"
+      ],
+      "planet_in_kendra": true,
+      "planet_in_own_exaltation": true
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.5,
+    "description": "Shasha Mahapurusha Yoga: Saturn in kendra in own/exaltation - longevity, discipline, authority"
+  },
+  {
+    "id": "Y010",
+    "category": "yoga",
+    "priority": 2,
+    "conditions": {
+      "yoga_type": "viparita_raja",
+      "planets_involved": [
+        "6th_lord",
+        "8th_lord",
+        "12th_lord"
+      ]
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.3,
+    "description": "Viparita Raja Yoga: Dusthana lords in dusthana - success from adversity"
+  },
+  {
+    "_comment": "=== D. NATAL MODIFIER RULES ==="
+  },
+  {
+    "id": "N001",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 1,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.2,
+    "description": "Strong 1st lord: Resilience, self-confidence, vitality baseline boost"
+  },
+  {
+    "id": "N002",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 2,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Strong 2nd lord: Wealth foundation, family support, financial stability"
+  },
+  {
+    "id": "N003",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 5,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.2,
+    "description": "Strong 5th lord: Romance favored, creativity, intelligence, children blessings"
+  },
+  {
+    "id": "N004",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 9,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 2
+    },
+    "multiplier": 1.2,
+    "description": "Strong 9th lord: Fortune baseline, dharmic path, higher wisdom accessible"
+  },
+  {
+    "id": "N005",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 10,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Strong 10th lord: Career foundation solid, professional success likely"
+  },
+  {
+    "id": "N006",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 10,
+      "house_lord_strength": "weak"
+    },
+    "effects": {
+      "career": -2,
+      "finance": -1,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 0.8,
+    "description": "Weak 10th lord: Career struggles baseline, need extra effort for recognition"
+  },
+  {
+    "id": "N007",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_planet": "Moon",
+      "planet_afflicted": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 0.9,
+    "description": "Afflicted Moon: Emotional volatility baseline, anxiety tendency"
+  },
+  {
+    "id": "N008",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_planet": "Moon",
+      "planet_strong": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.1,
+    "description": "Strong Moon: Emotional stability, mental clarity, intuition baseline"
+  },
+  {
+    "id": "N009",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 8,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 2
+    },
+    "multiplier": 1.1,
+    "description": "Strong 8th lord: Occult ability, transformation capacity, sudden gains possible"
+  },
+  {
+    "id": "N010",
+    "category": "natal_modifier",
+    "priority": 1,
+    "conditions": {
+      "natal_house": 11,
+      "house_lord_strength": "strong"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Strong 11th lord: Income opportunities abundant, gains amplified"
+  },
+  {
+    "_comment": "=== E. COMBINATION/INTERACTION RULES ==="
+  },
+  {
+    "id": "C001",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 10,
+      "transit_planet": "Jupiter",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 5,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.5,
+    "description": "SPIKE: 10th dasha + Jupiter transit 10th - Career breakthrough period"
+  },
+  {
+    "id": "C002",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 7,
+      "transit_planet": "Venus",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 5,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.4,
+    "description": "SPIKE: 7th dasha + Venus transit 5th - Romance/marriage peak period"
+  },
+  {
+    "id": "C003",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 2,
+      "transit_planet": "Jupiter",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 5,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.5,
+    "description": "SPIKE: 2nd dasha + Jupiter transit 11th - Maximum wealth accumulation"
+  },
+  {
+    "id": "C004",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 6,
+      "transit_planet": "Saturn",
+      "transit_house": 6
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": -4,
+      "mental": -3,
+      "spiritual": 1
+    },
+    "multiplier": 1.3,
+    "description": "CAUTION: 6th dasha + Saturn transit 6th - Health challenges intensify"
+  },
+  {
+    "id": "C005",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 8,
+      "transit_planet": "Mars",
+      "transit_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -5,
+      "mental": -3,
+      "spiritual": 2
+    },
+    "multiplier": 1.4,
+    "description": "DANGER: 8th dasha + Mars transit 8th - Accident/surgery caution, transformation crisis"
+  },
+  {
+    "id": "C006",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 9,
+      "transit_planet": "Jupiter",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 2,
+      "finance": 3,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 5
+    },
+    "multiplier": 1.6,
+    "description": "BLESSING: 9th dasha + Jupiter transit 9th - Divine grace, dharma peak, fortune"
+  },
+  {
+    "id": "C007",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 5,
+      "transit_planet": "Jupiter",
+      "transit_house": 5
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 4,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.5,
+    "description": "FERTILE: 5th dasha + Jupiter transit 5th - Childbirth, creative peak, romance"
+  },
+  {
+    "id": "C008",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 2,
+      "transit_planet": "Mars",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": -3,
+      "love": -2,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "CONFLICT: 2nd dasha + Mars transit 2nd - Financial stress, family disputes"
+  },
+  {
+    "id": "C009",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 12,
+      "transit_planet": "Saturn",
+      "transit_house": 12
+    },
+    "effects": {
+      "career": 0,
+      "finance": -3,
+      "love": 0,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 4
+    },
+    "multiplier": 1.3,
+    "description": "ISOLATION: 12th dasha + Saturn transit 12th - Expenses, solitude, moksha opportunity"
+  },
+  {
+    "id": "C010",
+    "category": "combination",
+    "priority": 1,
+    "conditions": {
+      "dasha_house": 11,
+      "transit_planet": "Jupiter",
+      "transit_house": 2
+    },
+    "effects": {
+      "career": 1,
+      "finance": 4,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.4,
+    "description": "PROSPERITY: 11th dasha + Jupiter transit 2nd - Wealth flow from multiple sources"
+  },
+  {
+    "_comment": "=== F. MICRO MENTAL/EMOTIONAL RULES ==="
+  },
+  {
+    "id": "M001",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 8,
+      "aspect_from": "Saturn"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -4,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Moon in 8th aspected by Saturn: Deep anxiety, depression tendency"
+  },
+  {
+    "id": "M002",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 4,
+      "aspect_from": "Jupiter"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 1,
+      "mental": 3,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Moon in 4th aspected by Jupiter: Peace, optimism, emotional nourishment"
+  },
+  {
+    "id": "M003",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "conjunction_with": "Rahu"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -3,
+      "spiritual": -1
+    },
+    "multiplier": 1.0,
+    "description": "Moon-Rahu conjunction (Grahan Yoga): Confusion, obsessive thoughts, mental fog"
+  },
+  {
+    "id": "M004",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "conjunction_with": "Ketu"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Moon-Ketu conjunction: Detachment, spiritual crisis, emotional isolation"
+  },
+  {
+    "id": "M005",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 1,
+      "aspect_from": "Mars"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon in 1st aspected by Mars: Impulsiveness, anger, restlessness"
+  },
+  {
+    "id": "M006",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Mercury",
+      "transit_retrograde": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mercury retrograde: Communication mishaps, decision delays, mental confusion"
+  },
+  {
+    "id": "M007",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 6,
+      "aspect_from": "Mars"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -1,
+      "health": -2,
+      "mental": -3,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Moon in 6th aspected by Mars: Conflicts, aggression, health anxiety"
+  },
+  {
+    "id": "M008",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Venus",
+      "transit_house": 12,
+      "aspect_from": "Saturn"
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Venus in 12th aspected by Saturn: Loneliness, relationship isolation, expenditure on pleasure"
+  },
+  {
+    "id": "M009",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Sun",
+      "conjunction_with": "Saturn"
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": 0,
+      "health": -1,
+      "mental": -2,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Sun-Saturn conjunction: Father issues, authority conflicts, depression, delays"
+  },
+  {
+    "id": "M010",
+    "category": "mental",
+    "priority": 2,
+    "conditions": {
+      "transit_planet": "Moon",
+      "transit_house": 9,
+      "aspect_from": "Jupiter"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 3,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Moon in 9th aspected by Jupiter: Divine blessings, optimism, wisdom, faith"
+  },
+  {
+    "_comment": "=== G. RAHU/KETU TRANSIT RULES (Nodes) ===",
+    "_note": "Shadow planets moving through houses - 1.5 years per sign"
+  },
+  {
+    "id": "T056",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -1,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 1st: Identity crisis, unconventional behavior, health issues, confusion"
+  },
+  {
+    "id": "T057",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 3
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 3rd (Upachaya): Courage boost, unconventional success, media gains"
+  },
+  {
+    "id": "T058",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 6
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 6th (Upachaya): Victory over enemies through cunning, disease conquered"
+  },
+  {
+    "id": "T059",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 7th: Unconventional partnerships, foreign spouse, relationship instability"
+  },
+  {
+    "id": "T060",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 10th (Upachaya): Sudden career rise, unconventional profession, technology/foreign"
+  },
+  {
+    "id": "T061",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Rahu",
+      "transit_house": 11
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Rahu transit 11th (Upachaya): Unexpected gains, foreign income, networking success"
+  },
+  {
+    "id": "T062",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 1st: Detachment from self, spiritual awakening, health issues, identity loss"
+  },
+  {
+    "id": "T063",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 4
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 4th: Detachment from home/mother, inner spiritual search, property loss"
+  },
+  {
+    "id": "T064",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 7
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 7th: Detachment from relationships, separation tendency, spiritual partnership"
+  },
+  {
+    "id": "T065",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 9
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 4
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 9th: Deep spirituality, moksha pursuit, detachment from dharma, mysticism"
+  },
+  {
+    "id": "T066",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 10
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 10th: Career instability, detachment from ambition, spiritual work"
+  },
+  {
+    "id": "T067",
+    "category": "transit",
+    "priority": 3,
+    "conditions": {
+      "transit_planet": "Ketu",
+      "transit_house": 12
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 4
+    },
+    "multiplier": 1.0,
+    "description": "Ketu transit 12th: Liberation, moksha, foreign lands, enlightenment opportunity"
+  },
+  {
+    "_comment": "=== H. SPECIAL YOGAS (Additional Classical Combinations) ==="
+  },
+  {
+    "id": "Y011",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "neecha_bhanga",
+      "planet_debilitated": true,
+      "cancellation_condition": true
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.4,
+    "description": "Neecha Bhanga Raja Yoga: Debilitation cancelled - fall leads to rise, rags to riches"
+  },
+  {
+    "id": "Y012",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "parivartana",
+      "mutual_exchange": true
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 1,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.3,
+    "description": "Parivartana Yoga: Mutual house exchange - strengthens both houses significantly"
+  },
+  {
+    "id": "Y013",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "adhi_yoga",
+      "benefics_in": [
+        6,
+        7,
+        8
+      ],
+      "reference_point": "Moon"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 3,
+      "love": 1,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.4,
+    "description": "Adhi Yoga: Benefics in 6/7/8 from Moon - prosperity, power, longevity"
+  },
+  {
+    "id": "Y014",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "chandra_mangala",
+      "planets_involved": [
+        "Moon",
+        "Mars"
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 0,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.3,
+    "description": "Chandra Mangala Yoga: Moon-Mars conjunction/aspect - wealth, property, assertive emotions"
+  },
+  {
+    "id": "Y015",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "lakshmi_yoga",
+      "ninth_lord_in_kendra": true,
+      "venus_strong": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 3,
+      "love": 2,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 1
+    },
+    "multiplier": 1.5,
+    "description": "Lakshmi Yoga: 9th lord in kendra with Venus - wealth, beauty, fortune of goddess"
+  },
+  {
+    "id": "Y016",
+    "category": "yoga",
+    "priority": 2,
+    "conditions": {
+      "yoga_type": "guru_chandal",
+      "planets_involved": [
+        "Jupiter",
+        "Rahu"
+      ],
+      "conjunction": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": -3
+    },
+    "multiplier": 0.8,
+    "description": "Guru Chandal Dosha: Jupiter-Rahu conjunction - wisdom corrupted, religious hypocrisy"
+  },
+  {
+    "id": "Y017",
+    "category": "yoga",
+    "priority": 2,
+    "conditions": {
+      "yoga_type": "kala_sarpa",
+      "all_planets_hemmed": true,
+      "between_rahu_ketu": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": -1,
+      "health": -1,
+      "mental": -2,
+      "spiritual": 2
+    },
+    "multiplier": 0.8,
+    "description": "Kala Sarpa Yoga: All planets between Rahu-Ketu - obstacles, delays, spiritual intensity"
+  },
+  {
+    "id": "Y018",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "amala_yoga",
+      "benefic_in_10th_from": [
+        "Moon",
+        "Lagna"
+      ]
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.3,
+    "description": "Amala Yoga: Natural benefic in 10th from Moon/Lagna - spotless reputation, prosperity"
+  },
+  {
+    "id": "Y019",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "sunapha",
+      "planet_in_2nd_from_moon": true,
+      "not_sun": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Sunapha Yoga: Planet (not Sun) in 2nd from Moon - self-made wealth, intelligence"
+  },
+  {
+    "id": "Y020",
+    "category": "yoga",
+    "priority": 1,
+    "conditions": {
+      "yoga_type": "anapha",
+      "planet_in_12th_from_moon": true,
+      "not_sun": true
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Anapha Yoga: Planet (not Sun) in 12th from Moon - good character, eloquence, wealth"
+  },
+  {
+    "_comment": "=== I. HOUSE LORD PLACEMENT RULES ==="
+  },
+  {
+    "id": "LP001",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 10,
+      "placed_in_house": 1
+    },
+    "effects": {
+      "career": 3,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.3,
+    "description": "10th lord in 1st: Self-made career, personal effort leads to success, strong karma"
+  },
+  {
+    "id": "LP002",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 10,
+      "placed_in_house": 7
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 1,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "10th lord in 7th: Career through partnerships, public dealings, business success"
+  },
+  {
+    "id": "LP003",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 10,
+      "placed_in_house": 10
+    },
+    "effects": {
+      "career": 3,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.4,
+    "description": "10th lord in 10th: Very strong career, high status, professional excellence"
+  },
+  {
+    "id": "LP004",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 9,
+      "placed_in_house": 1
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 2
+    },
+    "multiplier": 1.3,
+    "description": "9th lord in 1st: Lucky personality, dharmic life, father's blessings embodied"
+  },
+  {
+    "id": "LP005",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 9,
+      "placed_in_house": 9
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 3
+    },
+    "multiplier": 1.4,
+    "description": "9th lord in 9th: Maximum fortune, dharma, spirituality, father support strong"
+  },
+  {
+    "id": "LP006",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 5,
+      "placed_in_house": 9
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 2,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.3,
+    "description": "5th lord in 9th: Purva punya (past merit) strong, dharmic children, good fortune"
+  },
+  {
+    "id": "LP007",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 2,
+      "placed_in_house": 11
+    },
+    "effects": {
+      "career": 0,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.3,
+    "description": "2nd lord in 11th: Wealth from gains, financial prosperity, income multiplies savings"
+  },
+  {
+    "id": "LP008",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 11,
+      "placed_in_house": 2
+    },
+    "effects": {
+      "career": 0,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.3,
+    "description": "11th lord in 2nd: Gains convert to wealth, financial security through income"
+  },
+  {
+    "id": "LP009",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 7,
+      "placed_in_house": 1
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 3,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "7th lord in 1st: Spouse influences personality, early marriage, partnership focus"
+  },
+  {
+    "id": "LP010",
+    "category": "lord_placement",
+    "priority": 2,
+    "conditions": {
+      "house_lord": 8,
+      "placed_in_house": 8
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -1,
+      "spiritual": 3
+    },
+    "multiplier": 1.2,
+    "description": "8th lord in 8th: Longevity, occult power, transformation mastery, sudden events"
+  },
+  {
+    "_comment": "=== J. PLANETARY ASPECTS (Special) ==="
+  },
+  {
+    "id": "A001",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Mars",
+      "aspects_house": 4,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars 4th aspect: Aggression towards 4th house matters - home conflicts, property disputes"
+  },
+  {
+    "id": "A002",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Mars",
+      "aspects_house": 8,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Mars 8th aspect: Energy to 8th house - accidents, surgery, transformation through force"
+  },
+  {
+    "id": "A003",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Jupiter",
+      "aspects_house": 5,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 2,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter 5th aspect: Wisdom to 5th house - blessed children, creativity, intelligence"
+  },
+  {
+    "id": "A004",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Jupiter",
+      "aspects_house": 9,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 3
+    },
+    "multiplier": 1.0,
+    "description": "Jupiter 9th aspect: Grace to 9th house - fortune amplified, dharma supported, guru blessings"
+  },
+  {
+    "id": "A005",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Saturn",
+      "aspects_house": 3,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn 3rd aspect: Discipline to 3rd house - persistent efforts, delayed results, hard work"
+  },
+  {
+    "id": "A006",
+    "category": "aspect",
+    "priority": 2,
+    "conditions": {
+      "planet": "Saturn",
+      "aspects_house": 10,
+      "aspect_type": "special"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0,
+    "description": "Saturn 10th aspect: Structure to 10th house - career discipline, authority through hard work"
+  },
+  {
+    "_comment": "=== K. COMBUSTION SPECIFIC RULES ==="
+  },
+  {
+    "id": "CB001",
+    "category": "combustion",
+    "priority": 2,
+    "conditions": {
+      "planet": "Mercury",
+      "combust": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": 0,
+      "health": 0,
+      "mental": -2,
+      "spiritual": 0
+    },
+    "multiplier": 0.8,
+    "description": "Mercury combust: Communication issues, nervous system affected, intellect clouded"
+  },
+  {
+    "id": "CB002",
+    "category": "combustion",
+    "priority": 2,
+    "conditions": {
+      "planet": "Venus",
+      "combust": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 0.7,
+    "description": "Venus combust: Relationship issues, artistic abilities diminished, pleasure reduced"
+  },
+  {
+    "id": "CB003",
+    "category": "combustion",
+    "priority": 2,
+    "conditions": {
+      "planet": "Jupiter",
+      "combust": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": -1,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": -2
+    },
+    "multiplier": 0.7,
+    "description": "Jupiter combust: Wisdom diminished, fortune reduced, spiritual guidance weakened"
+  },
+  {
+    "id": "CB004",
+    "category": "combustion",
+    "priority": 2,
+    "conditions": {
+      "planet": "Mars",
+      "combust": true
+    },
+    "effects": {
+      "career": -1,
+      "finance": 0,
+      "love": -1,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 0.8,
+    "description": "Mars combust: Courage affected, aggression misdirected, energy scattered"
+  },
+  {
+    "id": "CB005",
+    "category": "combustion",
+    "priority": 2,
+    "conditions": {
+      "planet": "Saturn",
+      "combust": true
+    },
+    "effects": {
+      "career": -2,
+      "finance": -1,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 0.7,
+    "description": "Saturn combust: Career delays intensified, discipline weakened, authority conflicts"
+  },
+  {
+    "_comment": "=== L. DASHA ANTARDASHA COMBINATIONS ==="
+  },
+  {
+    "id": "DA001",
+    "category": "dasha_sub",
+    "priority": 1,
+    "conditions": {
+      "mahadasha_planet": "Venus",
+      "antardasha_planet": "Saturn"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": -2,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0,
+    "description": "Venus-Saturn period: Relationship delays, karmic love lessons, wealth through discipline"
+  },
+  {
+    "id": "DA002",
+    "category": "dasha_sub",
+    "priority": 1,
+    "conditions": {
+      "mahadasha_planet": "Jupiter",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 3,
+      "love": 1,
+      "health": 2,
+      "mental": 2,
+      "spiritual": 3
+    },
+    "multiplier": 1.5,
+    "description": "Jupiter-Jupiter period: Maximum expansion, wisdom peak, fortune blessed, guru grace"
+  },
+  {
+    "id": "DA003",
+    "category": "dasha_sub",
+    "priority": 1,
+    "conditions": {
+      "mahadasha_planet": "Saturn",
+      "antardasha_planet": "Saturn"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 0,
+      "health": -2,
+      "mental": -2,
+      "spiritual": 2
+    },
+    "multiplier": 0.7,
+    "description": "Saturn-Saturn period: Maximum testing, intense discipline, karmic debts, spiritual growth"
+  },
+  {
+    "id": "DA004",
+    "category": "dasha_sub",
+    "priority": 1,
+    "conditions": {
+      "mahadasha_planet": "Rahu",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.2,
+    "description": "Rahu-Jupiter period: Unconventional wisdom, foreign fortune, expansion through innovation"
+  },
+  {
+    "id": "DA005",
+    "category": "dasha_sub",
+    "priority": 1,
+    "conditions": {
+      "mahadasha_planet": "Mars",
+      "antardasha_planet": "Mars"
+    },
+    "effects": {
+      "career": 3,
+      "finance": 1,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.2,
+    "description": "Mars-Mars period: Maximum courage and aggression, property gains, accident caution"
+  },
+  {
+    "_comment": "=== M. DOUBLE TRANSIT RULES ==="
+  },
+  {
+    "id": "DT001",
+    "category": "double_transit",
+    "priority": 1,
+    "conditions": {
+      "jupiter_transit_house": 1,
+      "saturn_transit_house": 1
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 0,
+      "health": 1,
+      "mental": 2,
+      "spiritual": 2
+    },
+    "multiplier": 1.5,
+    "description": "Jupiter-Saturn both on 1st: Major life restructuring, disciplined expansion, significant self-development"
+  },
+  {
+    "id": "DT002",
+    "category": "double_transit",
+    "priority": 1,
+    "conditions": {
+      "jupiter_transit_house": 7,
+      "saturn_transit_house": 7
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 3,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.5,
+    "description": "Jupiter-Saturn both on 7th: Marriage materialization, partnership formalization, commitment"
+  },
+  {
+    "id": "DT003",
+    "category": "double_transit",
+    "priority": 1,
+    "conditions": {
+      "jupiter_transit_house": 10,
+      "saturn_transit_house": 10
+    },
+    "effects": {
+      "career": 4,
+      "finance": 3,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.6,
+    "description": "Jupiter-Saturn both on 10th: Career peak manifestation, lasting professional success, authority"
+  },
+  {
+    "id": "AD001",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H1: self-improvement, energy boost from sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        1
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD002",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H2: sub-period wealth inflow, family harmony",
+    "conditions": {
+      "antardasha_lord_owns": [
+        2
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1.5,
+      "love": 0,
+      "health": 0,
+      "mental": 0.5,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD003",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H3: sub-period courage, short efforts rewarded",
+    "conditions": {
+      "antardasha_lord_owns": [
+        3
+      ]
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0.5,
+      "love": 0,
+      "health": 0,
+      "mental": 0.5,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD004",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H4: domestic comfort, mental peace in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        4
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 1,
+      "spiritual": 0.5
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD005",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H5: romance and creativity amplified in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        5
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 1.5,
+      "health": 0,
+      "mental": 0.5,
+      "spiritual": 0.5
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD006",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H6 (dusthana): minor health strain in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        6
+      ]
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": -0.5,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD007",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H7: partnership opportunities open in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        7
+      ]
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 0.5,
+      "love": 1.5,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD008",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H8 (dusthana): sub-period of transformation and health caution",
+    "conditions": {
+      "antardasha_lord_owns": [
+        8
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -1.5,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD009",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H9: fortune and spirituality enhanced in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        9
+      ]
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 0.5,
+      "love": 0,
+      "health": 0.5,
+      "mental": 0.5,
+      "spiritual": 1.5
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD010",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H10: career momentum boosted in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        10
+      ]
+    },
+    "effects": {
+      "career": 1.5,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": 0.5,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD011",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H11: gains and income rise in sub-period",
+    "conditions": {
+      "antardasha_lord_owns": [
+        11
+      ]
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 1.5,
+      "love": 0.5,
+      "health": 0,
+      "mental": 0.5,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD012",
+    "category": "antardasha",
+    "priority": 6,
+    "description": "Anta lord owns H12 (dusthana): sub-period expenses and isolation",
+    "conditions": {
+      "antardasha_lord_owns": [
+        12
+      ]
+    },
+    "effects": {
+      "career": 0,
+      "finance": -1,
+      "love": 0,
+      "health": -0.5,
+      "mental": -0.5,
+      "spiritual": 1.5
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "AD013",
+    "category": "antardasha",
+    "priority": 5,
+    "description": "Anta lord exalted: sub-period results amplified across all areas",
+    "conditions": {
+      "antardasha_lord_exalted": true
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 0.5,
+      "love": 0.5,
+      "health": 0.5,
+      "mental": 0.5,
+      "spiritual": 0.5
+    },
+    "multiplier": 1.3
+  },
+  {
+    "id": "AD014",
+    "category": "antardasha",
+    "priority": 5,
+    "description": "Anta lord in own sign: stable and reliable sub-period results",
+    "conditions": {
+      "antardasha_lord_own_sign": true
+    },
+    "effects": {
+      "career": 0.5,
+      "finance": 0.5,
+      "love": 0.5,
+      "health": 0.5,
+      "mental": 0.5,
+      "spiritual": 0.5
+    },
+    "multiplier": 1.2
+  },
+  {
+    "id": "AD015",
+    "category": "antardasha",
+    "priority": 5,
+    "description": "Anta lord debilitated: sub-period results weakened across areas",
+    "conditions": {
+      "antardasha_lord_debilitated": true
+    },
+    "effects": {
+      "career": -0.5,
+      "finance": -0.5,
+      "love": -0.5,
+      "health": -0.5,
+      "mental": -0.5,
+      "spiritual": -0.5
+    },
+    "multiplier": 0.6
+  },
+  {
+    "id": "AD016",
+    "category": "antardasha",
+    "priority": 5,
+    "description": "Anta lord retrograde: sub-period delays and inner reflection",
+    "conditions": {
+      "antardasha_lord_retrograde": true
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -0.5,
+      "spiritual": 0.5
+    },
+    "multiplier": 0.9
+  },
+  {
+    "id": "AD017",
+    "category": "antardasha",
+    "priority": 5,
+    "description": "Anta lord combust: sub-period vitality reduced, ego friction",
+    "conditions": {
+      "antardasha_lord_combust": true
+    },
+    "effects": {
+      "career": -0.5,
+      "finance": -0.5,
+      "love": -0.5,
+      "health": 0,
+      "mental": -0.5,
+      "spiritual": 0
+    },
+    "multiplier": 0.7
+  },
+  {
+    "id": "DA006",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Sun-Moon period: public recognition with emotional sensitivity",
+    "conditions": {
+      "mahadasha_planet": "Sun",
+      "antardasha_planet": "Moon"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 0,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 0
+    },
+    "multiplier": 1.1
+  },
+  {
+    "id": "DA007",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Moon-Sun period: emotional vitality surge, public facing",
+    "conditions": {
+      "mahadasha_planet": "Moon",
+      "antardasha_planet": "Sun"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 0,
+      "love": 1,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 1
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "DA008",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Jupiter-Saturn period: expansion disciplined, structured growth",
+    "conditions": {
+      "mahadasha_planet": "Jupiter",
+      "antardasha_planet": "Saturn"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 1.1
+  },
+  {
+    "id": "DA009",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Saturn-Jupiter period: hardship softened by wisdom, spiritual gains",
+    "conditions": {
+      "mahadasha_planet": "Saturn",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": 0,
+      "spiritual": 2
+    },
+    "multiplier": 0.9
+  },
+  {
+    "id": "DA010",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Venus-Jupiter period: prosperity and grace, marriage and wealth",
+    "conditions": {
+      "mahadasha_planet": "Venus",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 2,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 2
+    },
+    "multiplier": 1.3
+  },
+  {
+    "id": "DA011",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Mercury-Venus period: creative business and charming relationships",
+    "conditions": {
+      "mahadasha_planet": "Mercury",
+      "antardasha_planet": "Venus"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 2,
+      "love": 2,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.1
+  },
+  {
+    "id": "DA012",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Mars-Jupiter period: courage guided by wisdom, dharmic action",
+    "conditions": {
+      "mahadasha_planet": "Mars",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 1
+    },
+    "multiplier": 1.1
+  },
+  {
+    "id": "DA013",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Jupiter-Venus period: guru and beauty, fortune through relationships",
+    "conditions": {
+      "mahadasha_planet": "Jupiter",
+      "antardasha_planet": "Venus"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 2,
+      "health": 1,
+      "mental": 0,
+      "spiritual": 2
+    },
+    "multiplier": 1.3
+  },
+  {
+    "id": "DA014",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Rahu-Saturn period: foreign obstacles, karmic discipline",
+    "conditions": {
+      "mahadasha_planet": "Rahu",
+      "antardasha_planet": "Saturn"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 0,
+      "love": 0,
+      "health": -1,
+      "mental": -2,
+      "spiritual": 1
+    },
+    "multiplier": 0.8
+  },
+  {
+    "id": "DA015",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Ketu-Jupiter period: spiritual liberation, detachment with grace",
+    "conditions": {
+      "mahadasha_planet": "Ketu",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": -1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": 0,
+      "spiritual": 3
+    },
+    "multiplier": 1.2
+  },
+  {
+    "id": "DA016",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Sun-Saturn period: authority meets delays, karmic career lessons",
+    "conditions": {
+      "mahadasha_planet": "Sun",
+      "antardasha_planet": "Saturn"
+    },
+    "effects": {
+      "career": -1,
+      "finance": 0,
+      "love": 0,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 1
+    },
+    "multiplier": 0.8
+  },
+  {
+    "id": "DA017",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Moon-Jupiter period: emotional wisdom, motherly grace, prosperity",
+    "conditions": {
+      "mahadasha_planet": "Moon",
+      "antardasha_planet": "Jupiter"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 1,
+      "love": 2,
+      "health": 1,
+      "mental": 1,
+      "spiritual": 2
+    },
+    "multiplier": 1.2
+  },
+  {
+    "id": "DA018",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Venus-Mercury period: creative expression and financial communication",
+    "conditions": {
+      "mahadasha_planet": "Venus",
+      "antardasha_planet": "Mercury"
+    },
+    "effects": {
+      "career": 1,
+      "finance": 2,
+      "love": 1,
+      "health": 0,
+      "mental": 2,
+      "spiritual": 0
+    },
+    "multiplier": 1.1
+  },
+  {
+    "id": "DA019",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Saturn-Venus period: delayed love rewarded, karmic luxury through discipline",
+    "conditions": {
+      "mahadasha_planet": "Saturn",
+      "antardasha_planet": "Venus"
+    },
+    "effects": {
+      "career": 0,
+      "finance": 1,
+      "love": 1,
+      "health": 0,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.0
+  },
+  {
+    "id": "DA020",
+    "category": "dasha_sub",
+    "priority": 4,
+    "description": "Mars-Rahu period: explosive ambition, sudden gains and accident risk",
+    "conditions": {
+      "mahadasha_planet": "Mars",
+      "antardasha_planet": "Rahu"
+    },
+    "effects": {
+      "career": 2,
+      "finance": 1,
+      "love": 0,
+      "health": -1,
+      "mental": -1,
+      "spiritual": 0
+    },
+    "multiplier": 1.1
+  }
+]

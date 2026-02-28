@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual env — never include in image
+venv/
+.venv/
+env/
+
+# Local dev / test / one-time scripts
+test_local.py
+test_transit_local.py
+fix_antardasha.py
+*.log
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Secrets — never bake into image; inject via Azure environment variables
+.env
+.env.*
+
+# macOS
+.DS_Store
