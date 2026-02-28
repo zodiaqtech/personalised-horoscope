@@ -3,22 +3,22 @@
 #
 # Trigger: every push to main branch (or manual dispatch)
 #
-# Required GitHub Secrets (Settings → Secrets → Actions → New repository secret):
+# ACR Pull auth: Managed Identity (no credentials stored/passed)
+#   One-time setup already done:
+#     az webapp identity assign --name personalised-horoscope --resource-group personalised-rg
+#     az role assignment create --assignee <principalId> --role AcrPull --scope <acrId>
+#     az resource update ... --set properties.siteConfig.acrUseManagedIdentityCreds=true
 #
-#   AZURE_CREDENTIALS     — JSON output of:
-#                             az ad sp create-for-rbac --name "horoscope-deploy" \
-#                               --role contributor \
-#                               --scopes /subscriptions/<SUB_ID>/resourceGroups/<RG> \
-#                               --sdk-auth
+# Required GitHub Secrets (Settings → Secrets → Actions):
+#   AZURE_CREDENTIALS   — JSON from: az ad sp create-for-rbac --sdk-auth
+#   ACR_LOGIN_SERVER    — personalisedacr.azurecr.io
+#   ACR_USERNAME        — ACR admin username (for docker push only)
+#   ACR_PASSWORD        — ACR admin password (for docker push only)
+#   AZURE_WEBAPP_NAME   — personalised-horoscope
+#   RESOURCE_GROUP      — personalised-rg
 #
-#   ACR_LOGIN_SERVER      — e.g.  horoscopeacr.azurecr.io
-#   ACR_USERNAME          — ACR admin username  (az acr credential show --name horoscopeacr)
-#   ACR_PASSWORD          — ACR admin password  (same command)
-#   AZURE_WEBAPP_NAME     — App Service name    e.g.  myzodiaq-horoscope
-#   RESOURCE_GROUP        — Resource group name e.g.  horoscope-rg
-#
-# All other runtime config (REDIS_URL, MONGODB_URI, etc.) is stored as
-# App Service Application Settings — set once via CLI, never in this file.
+# Runtime config (REDIS_URL, MONGODB_URI, etc.) lives in App Service
+# Application Settings — set once via CLI, never in this file.
 # ─────────────────────────────────────────────────────────────────────────────
 name: Build & Deploy — Azure Web App
 
@@ -46,7 +46,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # ── 3. ACR auth ────────────────────────────────────────────────────────
+      # ── 3. ACR auth (push only — pull uses Managed Identity) ───────────────
       - name: Login to Azure Container Registry
         uses: docker/login-action@v3
         with:
@@ -55,7 +55,6 @@ jobs:
           password:  ${{ secrets.ACR_PASSWORD }}
 
       # ── 4. Build & push ────────────────────────────────────────────────────
-      # Uses registry-based layer cache so repeat builds are fast.
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -71,17 +70,20 @@ jobs:
           cache-to:   type=registry,ref=${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:cache,mode=max
 
       # ── 5. Deploy ──────────────────────────────────────────────────────────
-      # Updates the Web App to pull the new image tag.
-      # App Service will perform a zero-downtime swap automatically.
+      # Updates the linuxFxVersion image tag via Azure CLI.
+      # App Service pulls the new image using its Managed Identity (AcrPull role).
       - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name:  ${{ secrets.AZURE_WEBAPP_NAME }}
-          images:    ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        run: |
+          az webapp config container set \
+            --name ${{ secrets.AZURE_WEBAPP_NAME }} \
+            --resource-group ${{ secrets.RESOURCE_GROUP }} \
+            --container-image-name ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          az webapp restart \
+            --name ${{ secrets.AZURE_WEBAPP_NAME }} \
+            --resource-group ${{ secrets.RESOURCE_GROUP }}
 
       # ── 6. Verify ──────────────────────────────────────────────────────────
-      # Azure App Service takes 2-3 min to pull the image and start the container.
-      # Retry every 20s for up to 3 minutes before failing.
+      # Retry every 20s for up to 3 min — container pull + start takes ~60-90s.
       - name: Health check (retry 3 min)
         run: |
           URL="https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/v1/health"
@@ -90,11 +92,11 @@ jobs:
             STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$URL" || echo "000")
             echo "Attempt $i/9 — HTTP $STATUS"
             if [ "$STATUS" = "200" ]; then
-              echo "✓ App is healthy"
+              echo "✓ Deployment successful"
               exit 0
             fi
             sleep 20
           done
           echo "Health check did not return 200 after 3 minutes."
-          echo "Check App Service logs: az webapp log tail --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}"
+          echo "Run: az webapp log tail --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}"
           exit 1
