@@ -238,13 +238,30 @@ OVERALL_TEMPLATES: Dict[str, str] = {
 }
 
 
-def get_template(area: str, band: str) -> str:
-    """Return the pre-written text for a given life area and band."""
+def get_template(area: str, band: str, lang: str = "en") -> str:
+    """Return the pre-written text for a given life area and band.
+
+    Args:
+        area: Life area key (career, finance, love, health, mental, spiritual)
+        band: Score band (very_positive, favourable, neutral, caution, challenging)
+        lang: Language code — "en" (default) or "hi"
+    """
+    if lang == "hi":
+        from templates.horoscope_templates_hi import get_template_hi
+        return get_template_hi(area, band)
     area_templates = TEMPLATES.get(area, {})
     return area_templates.get(band, "Today brings a mix of energies in this area. Proceed with awareness.")
 
 
-def get_overall_template(average_score: float) -> str:
-    """Return the overall summary text based on average score across all areas."""
+def get_overall_template(average_score: float, lang: str = "en") -> str:
+    """Return the overall summary text based on average score across all areas.
+
+    Args:
+        average_score: Mean clamped score across all life areas
+        lang: Language code — "en" (default) or "hi"
+    """
+    if lang == "hi":
+        from templates.horoscope_templates_hi import get_overall_template_hi
+        return get_overall_template_hi(average_score)
     band = score_to_band(average_score)
     return OVERALL_TEMPLATES.get(band, "Today unfolds with a balance of planetary energies.")

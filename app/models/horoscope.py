@@ -1,5 +1,8 @@
 """
 Pydantic models for horoscope API responses.
+
+horoscope     → English text (always present)
+horoscope_hi  → Hindi text  (always present, same bands/scores)
 """
 from pydantic import BaseModel, Field
 from typing import Dict, Optional
@@ -37,12 +40,13 @@ class HoroscopeText(BaseModel):
 class HoroscopeResponse(BaseModel):
     user_id: str
     name: str
-    date: str                       # "YYYY-MM-DD"
-    active_dasha: str               # current Maha Dasha lord   (e.g. "Jupiter")
-    active_anta_dasha: str = ""     # current Antara Dasha lord (e.g. "Venus")
+    date: str                           # "YYYY-MM-DD"
+    active_dasha: str                   # current Maha Dasha lord   (e.g. "Jupiter")
+    active_anta_dasha: str = ""         # current Antara Dasha lord (e.g. "Venus")
     scores: LifeAreaScores
     bands: LifeAreaBands
-    horoscope: HoroscopeText
+    horoscope: HoroscopeText            # English text
+    horoscope_hi: Optional[HoroscopeText] = None  # Hindi text
     generated_at: datetime = Field(default_factory=datetime.utcnow)
 
 

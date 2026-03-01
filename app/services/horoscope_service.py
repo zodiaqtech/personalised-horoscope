@@ -95,13 +95,14 @@ def generate_horoscope(
     # ── 5. Score → Band ─────────────────────────────────────────────
     bands = {area: score_to_band(clamped[area]) for area in SCORE_AREAS}
 
-    # ── 6. Band → Text ──────────────────────────────────────────────
-    texts = {area: get_template(area, bands[area]) for area in SCORE_AREAS}
-
-    # Overall text: based on average score
+    # ── 6. Band → Text (English + Hindi) ────────────────────────────
     avg_score = sum(clamped[a] for a in SCORE_AREAS) / len(SCORE_AREAS)
-    overall_text = get_overall_template(avg_score)
-    texts["overall"] = overall_text
+
+    texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
+    texts_en["overall"] = get_overall_template(avg_score, lang="en")
+
+    texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
+    texts_hi["overall"] = get_overall_template(avg_score, lang="hi")
 
     # ── 7. Build Response ───────────────────────────────────────────
     return HoroscopeResponse(
@@ -112,7 +113,8 @@ def generate_horoscope(
         active_anta_dasha=natal.active_anta_dasha_lord,
         scores=LifeAreaScores(**{a: round(clamped[a], 2) for a in SCORE_AREAS}),
         bands=LifeAreaBands(**bands),
-        horoscope=HoroscopeText(**texts),
+        horoscope=HoroscopeText(**texts_en),
+        horoscope_hi=HoroscopeText(**texts_hi),
     )
 
 
@@ -132,9 +134,13 @@ def generate_horoscope_for_natal(
     scaled_scores = {a: raw_scores[a] / SCORE_SCALE for a in SCORE_AREAS}
     clamped = clamp_scores(scaled_scores)
     bands = {area: score_to_band(clamped[area]) for area in SCORE_AREAS}
-    texts = {area: get_template(area, bands[area]) for area in SCORE_AREAS}
     avg_score = sum(clamped[a] for a in SCORE_AREAS) / len(SCORE_AREAS)
-    texts["overall"] = get_overall_template(avg_score)
+
+    texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
+    texts_en["overall"] = get_overall_template(avg_score, lang="en")
+
+    texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
+    texts_hi["overall"] = get_overall_template(avg_score, lang="hi")
 
     return HoroscopeResponse(
         user_id=natal.user_id,
@@ -144,5 +150,6 @@ def generate_horoscope_for_natal(
         active_anta_dasha=natal.active_anta_dasha_lord,
         scores=LifeAreaScores(**{a: round(clamped[a], 2) for a in SCORE_AREAS}),
         bands=LifeAreaBands(**bands),
-        horoscope=HoroscopeText(**texts),
+        horoscope=HoroscopeText(**texts_en),
+        horoscope_hi=HoroscopeText(**texts_hi),
     )
