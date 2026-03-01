@@ -34,8 +34,7 @@ from app.services.natal_service import (
     _detect_active_dasha,
     _detect_active_antardasha,
 )
-from app.services.horoscope_service import generate_horoscope_for_natal, SCORE_SCALE
-from app.services.rule_engine import load_rules
+from app.services.horoscope_service import generate_horoscope_for_natal
 import app.db.mongodb as db
 
 # Re-detect the active dasha lord if the stored natal profile is older than this
@@ -127,33 +126,13 @@ async def _process_user(
         except Exception as e:
             logger.warning(f"[Batch] Dasha refresh skipped for {user_id}: {e}")
 
-        # ── 2. Horoscope generation (pure CPU, no I/O) ───────────────
-        # Uses pre-computed global transit (sign map + retrograde).
-        # Applies SCORE_SCALE so scores match the live API endpoint.
-        from app.services.rule_engine import evaluate_rules, clamp_scores
-        from templates.horoscope_templates import score_to_band, get_template, get_overall_template
-        from app.models.horoscope import HoroscopeResponse, LifeAreaScores, LifeAreaBands, HoroscopeText
-
-        SCORE_AREAS = ["career", "finance", "love", "health", "mental", "spiritual"]
-
-        raw_scores = evaluate_rules(natal, transit_sign_map, transit_retrograde)
-        scaled_scores = {a: raw_scores[a] / SCORE_SCALE for a in SCORE_AREAS}
-        clamped = clamp_scores(scaled_scores)
-        bands = {area: score_to_band(clamped[area]) for area in SCORE_AREAS}
-        texts = {area: get_template(area, bands[area]) for area in SCORE_AREAS}
-        avg_score = sum(clamped[a] for a in SCORE_AREAS) / len(SCORE_AREAS)
-        texts["overall"] = get_overall_template(avg_score)
-
-        horoscope = HoroscopeResponse(
-            user_id=user_id,
-            name=name,
-            date=date_str,
-            active_dasha=natal.active_maha_dasha_lord,
-            active_anta_dasha=natal.active_anta_dasha_lord,
-            scores=LifeAreaScores(**{a: round(clamped[a], 2) for a in SCORE_AREAS}),
-            bands=LifeAreaBands(**bands),
-            horoscope=HoroscopeText(**texts),
-        )
+        # ── 2. Horoscope generation ───────────────────────────────────
+        # Delegate to the canonical service function so batch output always
+        # stays in sync with the live API endpoint (same SCORE_SCALE,
+        # same templates, same languages — English + Hindi).
+        # Transit was already computed + cached in Redis above, so
+        # generate_horoscope_for_natal() gets a cache HIT — no extra I/O.
+        horoscope = generate_horoscope_for_natal(natal, date_override=date_str)
 
         # ── 3. Persist to MongoDB ────────────────────────────────────
         await db.save_daily_horoscope(user_id, date_str, horoscope.model_dump())
