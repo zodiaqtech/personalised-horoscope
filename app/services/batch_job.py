@@ -173,16 +173,24 @@ async def run_daily_batch(date_override: Optional[str] = None) -> Dict:
     logger.info(f"[Batch] Retrograde today: {retro_list if retro_list else 'none'}")
 
     # Also cache in Redis so the API endpoint can read it
-    from app.services.transit_service import get_redis
+    from app.services.transit_service import get_redis, NAKSHATRA_NAMES
     import json
     from config import get_settings
     settings = get_settings()
     r = get_redis()
+
+    # Pre-compute Moon nakshatra for the day (used by horoscope service for daily variation)
+    moon_longitude = full_transit["Moon"]["longitude"]
+    moon_nak_idx = int(moon_longitude * 27 / 360) % 27
+    moon_nak_name = NAKSHATRA_NAMES[moon_nak_idx]
+    logger.info(f"[Batch] Moon nakshatra: {moon_nak_name} (index {moon_nak_idx})")
+
     if r:
         try:
             r.setex(f"transit:{date_str}", settings.REDIS_TRANSIT_TTL, json.dumps(transit_sign_map))
             r.setex(f"transit_full:{date_str}", settings.REDIS_TRANSIT_TTL, json.dumps(full_transit))
-            logger.info("[Batch] Transit cached in Redis")
+            r.setex(f"transit_moon_nak:{date_str}", settings.REDIS_TRANSIT_TTL, str(moon_nak_idx))
+            logger.info("[Batch] Transit + Moon nakshatra cached in Redis")
         except Exception as e:
             logger.warning(f"[Batch] Redis write error: {e}")
 

@@ -238,6 +238,78 @@ OVERALL_TEMPLATES: Dict[str, str] = {
 }
 
 
+# ─────────────────────────────────────────────
+# Nakshatra lord daily tone (Phase 4)
+# ─────────────────────────────────────────────
+# Indexed by nakshatra_idx % 9 (lord group: 0=Ketu, 1=Venus, 2=Sun,
+# 3=Moon, 4=Mars, 5=Rahu, 6=Jupiter, 7=Saturn, 8=Mercury).
+# Moon changes nakshatra every ~1 day → this sentence varies daily,
+# even when no planet changes zodiac sign overnight.
+
+NAKSHATRA_LORD_DAILY_TONE_EN = [
+    # 0 — Ketu (Ashwini / Magha / Mula)
+    (
+        "Ketu's lunar energy invites release and inner purification today — "
+        "letting go of what no longer serves will create space for renewal."
+    ),
+    # 1 — Venus (Bharani / Purva Phalguni / Purva Ashadha)
+    (
+        "Venus's nakshatra lends a creative and aesthetic quality to the day — "
+        "beauty, pleasure, and artistic expression are especially favoured."
+    ),
+    # 2 — Sun (Krittika / Uttara Phalguni / Uttara Ashadha)
+    (
+        "The Sun's nakshatra lends authority and clarity today — "
+        "actions taken with purpose and integrity can yield lasting results."
+    ),
+    # 3 — Moon (Rohini / Hasta / Shravana)
+    (
+        "The Moon's own nakshatra heightens emotional intelligence and receptivity — "
+        "nurturing, deep listening, and genuine care are especially rewarded today."
+    ),
+    # 4 — Mars (Mrigashira / Chitra / Dhanishtha)
+    (
+        "Mars's nakshatra energises initiative and creative dynamism — "
+        "bold, well-directed action is strongly supported by today's lunar energy."
+    ),
+    # 5 — Rahu (Ardra / Swati / Shatabhisha)
+    (
+        "Rahu's nakshatra favours unconventional thinking and transformation today — "
+        "embrace change and be open to exploring new, unexpected approaches."
+    ),
+    # 6 — Jupiter (Punarvasu / Vishakha / Purva Bhadrapada)
+    (
+        "Jupiter's nakshatra expands vision and wisdom today — "
+        "long-term thinking, learning, and growth-oriented action are strongly favoured."
+    ),
+    # 7 — Saturn (Pushya / Anuradha / Uttara Bhadrapada)
+    (
+        "Saturn's nakshatra rewards disciplined, patient effort and loyal commitment — "
+        "steady perseverance and methodical work yield the most lasting gains today."
+    ),
+    # 8 — Mercury (Ashlesha / Jyeshtha / Revati)
+    (
+        "Mercury's nakshatra sharpens communication and analytical thinking today — "
+        "clarity in expression, thoughtful dialogue, and careful analysis are especially rewarded."
+    ),
+]
+
+
+def get_moon_nakshatra_tone(nakshatra_idx: int, lang: str = "en") -> str:
+    """
+    Return the daily nakshatra lord tone sentence for today's Moon position.
+
+    Args:
+        nakshatra_idx: Moon's nakshatra index (0-26), from get_today_moon_nakshatra()
+        lang: "en" or "hi"
+    """
+    lord_group = nakshatra_idx % 9
+    if lang == "hi":
+        from templates.horoscope_templates_hi import NAKSHATRA_LORD_DAILY_TONE_HI
+        return NAKSHATRA_LORD_DAILY_TONE_HI[lord_group]
+    return NAKSHATRA_LORD_DAILY_TONE_EN[lord_group]
+
+
 def get_template(area: str, band: str, lang: str = "en") -> str:
     """Return the pre-written text for a given life area and band.
 

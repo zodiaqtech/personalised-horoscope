@@ -14,6 +14,11 @@ Phase 3 additions:
 - `is_retrograde` flag added to each planet's position dict
 - `get_today_transit_retrograde()` returns {planet: is_retrograde_bool}
   cached under key `transit_retro:{YYYY-MM-DD}`
+
+Phase 4 additions:
+- `get_today_moon_nakshatra()` returns Moon's nakshatra index (0-26)
+  Moon spends ~1 day per nakshatra → daily horoscope variation
+  cached under key `transit_moon_nak:{YYYY-MM-DD}`
 """
 import json
 import logging
@@ -48,6 +53,17 @@ _SWE_PLANETS = {
 SIGNS_ORDER = [
     "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
     "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces",
+]
+
+# 27 Vedic Nakshatras — Moon transits one per ~day (27 nakshatras / 27.3-day cycle)
+# Used for daily horoscope variation independent of sign-level transit changes.
+NAKSHATRA_NAMES = [
+    "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra",
+    "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni",
+    "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha",
+    "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana",
+    "Dhanishtha", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada",
+    "Revati",
 ]
 
 
@@ -252,6 +268,53 @@ def get_today_transit_retrograde(date_override: Optional[str] = None) -> Dict[st
 
     _memory_retro_cache[today_str] = retro_map
     return retro_map
+
+
+def get_today_moon_nakshatra(date_override: Optional[str] = None) -> tuple:
+    """
+    Return Moon's nakshatra index (0-26) and name for today.
+
+    Moon spends approximately 1 day per nakshatra (360° ÷ 27 = 13.33°/nakshatra;
+    Moon moves ~13°/day). This provides daily horoscope variation even when
+    no planet changes zodiac sign overnight.
+
+    Nakshatra lord cycle (nakshatra_idx % 9):
+        0=Ketu, 1=Venus, 2=Sun, 3=Moon, 4=Mars,
+        5=Rahu, 6=Jupiter, 7=Saturn, 8=Mercury
+
+    Redis key: transit_moon_nak:{YYYY-MM-DD}
+    Returns: (nakshatra_index: int, nakshatra_name: str)
+    """
+    today_str = date_override or _ist_today()
+    redis_key = f"transit_moon_nak:{today_str}"
+
+    r = get_redis()
+    if r:
+        try:
+            cached = r.get(redis_key)
+            if cached:
+                idx = int(cached)
+                logger.debug(f"Moon nakshatra cache HIT (Redis) for {today_str}: {NAKSHATRA_NAMES[idx]}")
+                return idx, NAKSHATRA_NAMES[idx]
+        except Exception as e:
+            logger.warning(f"Redis read error (moon nakshatra): {e}")
+
+    # Compute from ephemeris
+    logger.info(f"Computing Moon nakshatra for {today_str}")
+    date_obj = datetime.strptime(today_str, "%Y-%m-%d")
+    full_transit = compute_transit_for_date(date_obj)
+    moon_longitude = full_transit["Moon"]["longitude"]
+    idx = int(moon_longitude * 27 / 360) % 27
+    name = NAKSHATRA_NAMES[idx]
+
+    if r:
+        try:
+            r.setex(redis_key, settings.REDIS_TRANSIT_TTL, str(idx))
+            logger.info(f"Moon nakshatra cached: {redis_key} = {idx} ({name})")
+        except Exception as e:
+            logger.warning(f"Redis write error (moon nakshatra): {e}")
+
+    return idx, name
 
 
 def get_today_transit_full(date_override: Optional[str] = None) -> Dict[str, dict]:

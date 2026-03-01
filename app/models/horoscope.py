@@ -43,6 +43,7 @@ class HoroscopeResponse(BaseModel):
     date: str                           # "YYYY-MM-DD"
     active_dasha: str                   # current Maha Dasha lord   (e.g. "Jupiter")
     active_anta_dasha: str = ""         # current Antara Dasha lord (e.g. "Venus")
+    moon_nakshatra: str = ""            # Moon's nakshatra (e.g. "Ashwini") — changes daily
     scores: LifeAreaScores
     bands: LifeAreaBands
     horoscope: HoroscopeText            # English text

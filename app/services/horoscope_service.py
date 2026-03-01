@@ -16,9 +16,9 @@ from typing import Optional
 from app.models.natal_profile import NatalProfile
 from app.models.horoscope import HoroscopeResponse, LifeAreaScores, LifeAreaBands, HoroscopeText
 from app.services.natal_service import get_or_compute_natal, get_natal_profile
-from app.services.transit_service import get_today_transit, get_today_transit_retrograde
+from app.services.transit_service import get_today_transit, get_today_transit_retrograde, get_today_moon_nakshatra
 from app.services.rule_engine import evaluate_rules, clamp_scores
-from templates.horoscope_templates import score_to_band, get_template, get_overall_template
+from templates.horoscope_templates import score_to_band, get_template, get_overall_template, get_moon_nakshatra_tone
 
 logger = logging.getLogger(__name__)
 
@@ -98,11 +98,17 @@ def generate_horoscope(
     # ── 6. Band → Text (English + Hindi) ────────────────────────────
     avg_score = sum(clamped[a] for a in SCORE_AREAS) / len(SCORE_AREAS)
 
+    # Moon nakshatra — changes ~daily, provides daily textual variation
+    # even when no planet changes zodiac sign overnight.
+    moon_nak_idx, moon_nak_name = get_today_moon_nakshatra(date_override=today_str)
+    nak_tone_en = get_moon_nakshatra_tone(moon_nak_idx, lang="en")
+    nak_tone_hi = get_moon_nakshatra_tone(moon_nak_idx, lang="hi")
+
     texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
-    texts_en["overall"] = get_overall_template(avg_score, lang="en")
+    texts_en["overall"] = get_overall_template(avg_score, lang="en") + " " + nak_tone_en
 
     texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
-    texts_hi["overall"] = get_overall_template(avg_score, lang="hi")
+    texts_hi["overall"] = get_overall_template(avg_score, lang="hi") + " " + nak_tone_hi
 
     # ── 7. Build Response ───────────────────────────────────────────
     return HoroscopeResponse(
@@ -111,6 +117,7 @@ def generate_horoscope(
         date=today_str,
         active_dasha=natal.active_maha_dasha_lord,
         active_anta_dasha=natal.active_anta_dasha_lord,
+        moon_nakshatra=moon_nak_name,
         scores=LifeAreaScores(**{a: round(clamped[a], 2) for a in SCORE_AREAS}),
         bands=LifeAreaBands(**bands),
         horoscope=HoroscopeText(**texts_en),
@@ -136,11 +143,15 @@ def generate_horoscope_for_natal(
     bands = {area: score_to_band(clamped[area]) for area in SCORE_AREAS}
     avg_score = sum(clamped[a] for a in SCORE_AREAS) / len(SCORE_AREAS)
 
+    moon_nak_idx, moon_nak_name = get_today_moon_nakshatra(date_override=today_str)
+    nak_tone_en = get_moon_nakshatra_tone(moon_nak_idx, lang="en")
+    nak_tone_hi = get_moon_nakshatra_tone(moon_nak_idx, lang="hi")
+
     texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
-    texts_en["overall"] = get_overall_template(avg_score, lang="en")
+    texts_en["overall"] = get_overall_template(avg_score, lang="en") + " " + nak_tone_en
 
     texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
-    texts_hi["overall"] = get_overall_template(avg_score, lang="hi")
+    texts_hi["overall"] = get_overall_template(avg_score, lang="hi") + " " + nak_tone_hi
 
     return HoroscopeResponse(
         user_id=natal.user_id,
@@ -148,6 +159,7 @@ def generate_horoscope_for_natal(
         date=today_str,
         active_dasha=natal.active_maha_dasha_lord,
         active_anta_dasha=natal.active_anta_dasha_lord,
+        moon_nakshatra=moon_nak_name,
         scores=LifeAreaScores(**{a: round(clamped[a], 2) for a in SCORE_AREAS}),
         bands=LifeAreaBands(**bands),
         horoscope=HoroscopeText(**texts_en),
