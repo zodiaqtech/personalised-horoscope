@@ -239,75 +239,246 @@ OVERALL_TEMPLATES: Dict[str, str] = {
 
 
 # ─────────────────────────────────────────────
-# Nakshatra lord daily tone (Phase 4)
+# Nakshatra lord daily tone — per life area (Phase 4+)
 # ─────────────────────────────────────────────
+# Each life area (career, finance, love, health, mental, spiritual) plus
+# "overall" has its own list of 9 lord-group sentences.
 # Indexed by nakshatra_idx % 9 (lord group: 0=Ketu, 1=Venus, 2=Sun,
 # 3=Moon, 4=Mars, 5=Rahu, 6=Jupiter, 7=Saturn, 8=Mercury).
-# Moon changes nakshatra every ~1 day → this sentence varies daily,
-# even when no planet changes zodiac sign overnight.
+# Moon changes nakshatra every ~1 day → each area's appended sentence
+# varies daily, even when no planet changes zodiac sign overnight.
 
-NAKSHATRA_LORD_DAILY_TONE_EN = [
-    # 0 — Ketu (Ashwini / Magha / Mula)
-    (
+NAKSHATRA_AREA_DAILY_TONE_EN: Dict[str, list] = {
+
+    "overall": [
+        # 0 — Ketu
         "Ketu's lunar energy invites release and inner purification today — "
-        "letting go of what no longer serves will create space for renewal."
-    ),
-    # 1 — Venus (Bharani / Purva Phalguni / Purva Ashadha)
-    (
+        "letting go of what no longer serves will create space for renewal.",
+        # 1 — Venus
         "Venus's nakshatra lends a creative and aesthetic quality to the day — "
-        "beauty, pleasure, and artistic expression are especially favoured."
-    ),
-    # 2 — Sun (Krittika / Uttara Phalguni / Uttara Ashadha)
-    (
+        "beauty, pleasure, and artistic expression are especially favoured.",
+        # 2 — Sun
         "The Sun's nakshatra lends authority and clarity today — "
-        "actions taken with purpose and integrity can yield lasting results."
-    ),
-    # 3 — Moon (Rohini / Hasta / Shravana)
-    (
+        "actions taken with purpose and integrity can yield lasting results.",
+        # 3 — Moon
         "The Moon's own nakshatra heightens emotional intelligence and receptivity — "
-        "nurturing, deep listening, and genuine care are especially rewarded today."
-    ),
-    # 4 — Mars (Mrigashira / Chitra / Dhanishtha)
-    (
+        "nurturing, deep listening, and genuine care are especially rewarded today.",
+        # 4 — Mars
         "Mars's nakshatra energises initiative and creative dynamism — "
-        "bold, well-directed action is strongly supported by today's lunar energy."
-    ),
-    # 5 — Rahu (Ardra / Swati / Shatabhisha)
-    (
+        "bold, well-directed action is strongly supported by today's lunar energy.",
+        # 5 — Rahu
         "Rahu's nakshatra favours unconventional thinking and transformation today — "
-        "embrace change and be open to exploring new, unexpected approaches."
-    ),
-    # 6 — Jupiter (Punarvasu / Vishakha / Purva Bhadrapada)
-    (
+        "embrace change and be open to exploring new, unexpected approaches.",
+        # 6 — Jupiter
         "Jupiter's nakshatra expands vision and wisdom today — "
-        "long-term thinking, learning, and growth-oriented action are strongly favoured."
-    ),
-    # 7 — Saturn (Pushya / Anuradha / Uttara Bhadrapada)
-    (
+        "long-term thinking, learning, and growth-oriented action are strongly favoured.",
+        # 7 — Saturn
         "Saturn's nakshatra rewards disciplined, patient effort and loyal commitment — "
-        "steady perseverance and methodical work yield the most lasting gains today."
-    ),
-    # 8 — Mercury (Ashlesha / Jyeshtha / Revati)
-    (
+        "steady perseverance and methodical work yield the most lasting gains today.",
+        # 8 — Mercury
         "Mercury's nakshatra sharpens communication and analytical thinking today — "
-        "clarity in expression, thoughtful dialogue, and careful analysis are especially rewarded."
-    ),
-]
+        "clarity in expression, thoughtful dialogue, and careful analysis are especially rewarded.",
+    ],
+
+    "career": [
+        # 0 — Ketu
+        "Ketu's energy calls for stepping back from ego-driven ambition today — "
+        "release attachment to outcomes and focus on purposeful, dharmic work.",
+        # 1 — Venus
+        "Venus's nakshatra favours diplomacy, relationship-building, and creative collaboration at work today — "
+        "charm and cooperation open professional doors.",
+        # 2 — Sun
+        "The Sun's nakshatra amplifies leadership and professional authority today — "
+        "step forward with confidence and take ownership of your goals.",
+        # 3 — Moon
+        "The Moon's nakshatra highlights emotional intelligence in professional settings today — "
+        "read the room, adapt with care, and lead with empathy.",
+        # 4 — Mars
+        "Mars's nakshatra drives ambition, initiative, and competitive energy at work today — "
+        "bold decisions and decisive actions are well-supported.",
+        # 5 — Rahu
+        "Rahu's nakshatra favours unconventional career moves and innovation today — "
+        "thinking outside the box can unlock unexpected professional opportunities.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra broadens professional vision and favours mentorship, teaching, and strategic growth today — "
+        "think long-term in career matters.",
+        # 7 — Saturn
+        "Saturn's nakshatra rewards disciplined effort, reliability, and structured work today — "
+        "steady, committed action builds lasting professional reputation.",
+        # 8 — Mercury
+        "Mercury's nakshatra sharpens professional communication and analytical ability today — "
+        "negotiations, presentations, and written work are especially favoured.",
+    ],
+
+    "finance": [
+        # 0 — Ketu
+        "Ketu's energy invites detachment from material gain today — "
+        "avoid speculative risks and focus on protecting and stewarding existing resources.",
+        # 1 — Venus
+        "Venus's nakshatra favours financial gains through creative, artistic, or luxury-related ventures today — "
+        "aesthetic value can translate into monetary gain.",
+        # 2 — Sun
+        "The Sun's nakshatra supports transactions requiring authority and clarity today — "
+        "government dealings, official financial matters, and strategic investments benefit.",
+        # 3 — Moon
+        "The Moon's nakshatra highlights emotional spending patterns today — "
+        "nurture financial security by being mindful of comfort-driven purchases.",
+        # 4 — Mars
+        "Mars's nakshatra energises decisive financial action today — "
+        "bold investment moves are supported, but guard against impulsiveness.",
+        # 5 — Rahu
+        "Rahu's nakshatra favours unconventional financial opportunities today — "
+        "new-age investments or emerging avenues may yield gains, but research thoroughly first.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra expands wealth consciousness today — "
+        "long-term financial planning, ethical investments, and charitable giving are strongly favoured.",
+        # 7 — Saturn
+        "Saturn's nakshatra rewards frugality, patience, and methodical financial management today — "
+        "slow and steady accumulation outpaces risky shortcuts.",
+        # 8 — Mercury
+        "Mercury's nakshatra sharpens financial analysis and negotiation today — "
+        "carefully read contracts, review accounts, and seek clarity before committing funds.",
+    ],
+
+    "love": [
+        # 0 — Ketu
+        "Ketu's energy invites emotional release and spiritual bonding in relationships today — "
+        "deep, soulful connection matters more than surface pleasantries.",
+        # 1 — Venus
+        "Venus's nakshatra beautifully supports romance, affection, and aesthetic experiences shared with loved ones today — "
+        "an excellent day for tender connection.",
+        # 2 — Sun
+        "The Sun's nakshatra brings clarity and honesty to relationships today — "
+        "authentic expression of feelings and a confident, warm presence strengthen bonds.",
+        # 3 — Moon
+        "The Moon's own nakshatra heightens emotional depth and nurturing in relationships today — "
+        "deep listening and sincere care bring loved ones closer.",
+        # 4 — Mars
+        "Mars's nakshatra adds passion and intensity to romantic connections today — "
+        "feelings are strong; channel energy into loving action rather than conflict.",
+        # 5 — Rahu
+        "Rahu's nakshatra opens relationships to exciting, unconventional experiences today — "
+        "try something new together and embrace the unexpected.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra expands love through wisdom and shared values today — "
+        "meaningful conversations, spiritual connection, and growth together are favoured.",
+        # 7 — Saturn
+        "Saturn's nakshatra rewards loyal, committed, and enduring bonds today — "
+        "slow-burning, steadfast love proves more fulfilling than fleeting excitement.",
+        # 8 — Mercury
+        "Mercury's nakshatra favours witty, intellectually stimulating exchanges in relationships today — "
+        "conversation, humour, and shared ideas deepen connection.",
+    ],
+
+    "health": [
+        # 0 — Ketu
+        "Ketu's energy invites subtle body awareness today — "
+        "intuitive healing, rest, and releasing tension from the body are especially beneficial.",
+        # 1 — Venus
+        "Venus's nakshatra favours pleasurable, restorative health practices today — "
+        "gentle exercise, nourishing food, and beauty-enhancing routines support well-being.",
+        # 2 — Sun
+        "The Sun's nakshatra bolsters vitality and immune strength today — "
+        "spend time in sunlight, maintain an active routine, and prioritise energy levels.",
+        # 3 — Moon
+        "The Moon's nakshatra heightens sensitivity in the body today — "
+        "stay well-hydrated, eat light, and be attentive to emotional patterns that affect physical health.",
+        # 4 — Mars
+        "Mars's nakshatra fuels physical energy and stamina today — "
+        "vigorous exercise, strength training, and active pursuits are strongly supported.",
+        # 5 — Rahu
+        "Rahu's nakshatra calls for mindful health choices today — "
+        "avoid erratic routines and pay attention to subtle symptoms that may otherwise go unnoticed.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra supports holistic wellness and preventive health practices today — "
+        "integrate healing modalities that address body, mind, and spirit.",
+        # 7 — Saturn
+        "Saturn's nakshatra rewards consistent, disciplined health habits today — "
+        "stick to your routine, prioritise sleep, and avoid shortcuts in self-care.",
+        # 8 — Mercury
+        "Mercury's nakshatra highlights mind-body awareness today — "
+        "breathing exercises, journaling, and addressing mental stressors that impact physical health are beneficial.",
+    ],
+
+    "mental": [
+        # 0 — Ketu
+        "Ketu's energy favours introspection and letting go of mental clutter today — "
+        "silence, meditation, and releasing repetitive thoughts renew mental clarity.",
+        # 1 — Venus
+        "Venus's nakshatra brings creative inspiration and aesthetic joy to mental life today — "
+        "artistic pursuits, beautiful environments, and pleasure nourish the mind.",
+        # 2 — Sun
+        "The Sun's nakshatra sharpens mental focus and willpower today — "
+        "clarity of purpose fuels concentration; trust your insight and act decisively.",
+        # 3 — Moon
+        "The Moon's nakshatra deepens emotional awareness and receptive intelligence today — "
+        "creative thinking, imagination, and empathic understanding are at their peak.",
+        # 4 — Mars
+        "Mars's nakshatra energises mental drive and competitive thinking today — "
+        "tackle challenging problems head-on and channel mental fire into productive output.",
+        # 5 — Rahu
+        "Rahu's nakshatra stimulates unconventional thinking and mental exploration today — "
+        "creative breakthroughs come from questioning assumptions and embracing novel ideas.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra expands the mind through wisdom and philosophical inquiry today — "
+        "reading, learning, and big-picture thinking are richly rewarding.",
+        # 7 — Saturn
+        "Saturn's nakshatra supports concentrated, methodical mental effort today — "
+        "deep work, structured study, and sustained focus yield the most valuable results.",
+        # 8 — Mercury
+        "Mercury's nakshatra is at its most potent today — "
+        "communication, logical analysis, writing, and linguistic skill are exceptionally sharp and well-supported.",
+    ],
+
+    "spiritual": [
+        # 0 — Ketu
+        "Ketu's nakshatra makes this a deeply auspicious day for moksha-oriented practice — "
+        "detachment, surrender, and silent meditation align you with the infinite.",
+        # 1 — Venus
+        "Venus's nakshatra invites devotional beauty into spiritual life today — "
+        "sacred music, artistic offerings, and bhakti practices carry a special luminosity.",
+        # 2 — Sun
+        "The Sun's nakshatra connects spiritual practice to dharma and self-luminosity today — "
+        "meditation on one's true purpose and sincere tapas bring deep inner rewards.",
+        # 3 — Moon
+        "The Moon's nakshatra fills spiritual practice with deep compassion and devotion today — "
+        "heart-centred prayer, mantra chanting, and selfless service are especially fruitful.",
+        # 4 — Mars
+        "Mars's nakshatra energises the spiritual will today — "
+        "disciplined sadhana, courageous inner inquiry, and breaking through spiritual stagnation are strongly favoured.",
+        # 5 — Rahu
+        "Rahu's nakshatra opens the door to transformative spiritual experiences today — "
+        "unconventional wisdom paths, shadow work, and embracing the unknown deepen the journey.",
+        # 6 — Jupiter
+        "Jupiter's nakshatra makes this an excellent day for scriptural study, satsang, and learning from a guru — "
+        "wisdom received now resonates deeply.",
+        # 7 — Saturn
+        "Saturn's nakshatra rewards patient, persistent spiritual practice today — "
+        "consistency in routine, humility, and service-oriented devotion build lasting inner strength.",
+        # 8 — Mercury
+        "Mercury's nakshatra sharpens mantra recitation, sacred study, and contemplative dialogue today — "
+        "the spoken and written word carries spiritual power.",
+    ],
+}
 
 
-def get_moon_nakshatra_tone(nakshatra_idx: int, lang: str = "en") -> str:
+def get_moon_nakshatra_tone(nakshatra_idx: int, lang: str = "en", area: str = "overall") -> str:
     """
     Return the daily nakshatra lord tone sentence for today's Moon position.
 
     Args:
         nakshatra_idx: Moon's nakshatra index (0-26), from get_today_moon_nakshatra()
         lang: "en" or "hi"
+        area: Life area key — "career", "finance", "love", "health", "mental",
+              "spiritual", or "overall" (default)
     """
     lord_group = nakshatra_idx % 9
     if lang == "hi":
-        from templates.horoscope_templates_hi import NAKSHATRA_LORD_DAILY_TONE_HI
-        return NAKSHATRA_LORD_DAILY_TONE_HI[lord_group]
-    return NAKSHATRA_LORD_DAILY_TONE_EN[lord_group]
+        from templates.horoscope_templates_hi import NAKSHATRA_AREA_DAILY_TONE_HI
+        area_tones = NAKSHATRA_AREA_DAILY_TONE_HI.get(area, NAKSHATRA_AREA_DAILY_TONE_HI["overall"])
+        return area_tones[lord_group]
+    area_tones = NAKSHATRA_AREA_DAILY_TONE_EN.get(area, NAKSHATRA_AREA_DAILY_TONE_EN["overall"])
+    return area_tones[lord_group]
 
 
 def get_template(area: str, band: str, lang: str = "en") -> str:

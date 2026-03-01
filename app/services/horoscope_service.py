@@ -104,10 +104,16 @@ def generate_horoscope(
     nak_tone_en = get_moon_nakshatra_tone(moon_nak_idx, lang="en")
     nak_tone_hi = get_moon_nakshatra_tone(moon_nak_idx, lang="hi")
 
-    texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
+    texts_en = {
+        area: get_template(area, bands[area], lang="en") + " " + get_moon_nakshatra_tone(moon_nak_idx, lang="en", area=area)
+        for area in SCORE_AREAS
+    }
     texts_en["overall"] = get_overall_template(avg_score, lang="en") + " " + nak_tone_en
 
-    texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
+    texts_hi = {
+        area: get_template(area, bands[area], lang="hi") + " " + get_moon_nakshatra_tone(moon_nak_idx, lang="hi", area=area)
+        for area in SCORE_AREAS
+    }
     texts_hi["overall"] = get_overall_template(avg_score, lang="hi") + " " + nak_tone_hi
 
     # ── 7. Build Response ───────────────────────────────────────────
@@ -147,10 +153,16 @@ def generate_horoscope_for_natal(
     nak_tone_en = get_moon_nakshatra_tone(moon_nak_idx, lang="en")
     nak_tone_hi = get_moon_nakshatra_tone(moon_nak_idx, lang="hi")
 
-    texts_en = {area: get_template(area, bands[area], lang="en") for area in SCORE_AREAS}
+    texts_en = {
+        area: get_template(area, bands[area], lang="en") + " " + get_moon_nakshatra_tone(moon_nak_idx, lang="en", area=area)
+        for area in SCORE_AREAS
+    }
     texts_en["overall"] = get_overall_template(avg_score, lang="en") + " " + nak_tone_en
 
-    texts_hi = {area: get_template(area, bands[area], lang="hi") for area in SCORE_AREAS}
+    texts_hi = {
+        area: get_template(area, bands[area], lang="hi") + " " + get_moon_nakshatra_tone(moon_nak_idx, lang="hi", area=area)
+        for area in SCORE_AREAS
+    }
     texts_hi["overall"] = get_overall_template(avg_score, lang="hi") + " " + nak_tone_hi
 
     return HoroscopeResponse(
