@@ -139,6 +139,7 @@ async def save_daily_horoscope(user_id: str, date: str, horoscope_dict: Dict) ->
     """
     Upsert today's horoscope for a user.
     Document keyed on (user_id, date) — safe to call multiple times.
+    Busts the Redis cache so the next read picks up the fresh document.
     """
     if not is_connected():
         logger.debug("MongoDB not connected — horoscope not saved to DB")
@@ -151,6 +152,8 @@ async def save_daily_horoscope(user_id: str, date: str, horoscope_dict: Dict) ->
             doc,
             upsert=True,
         )
+        # Bust Redis cache so the next read re-populates with the fresh document
+        _redis_delete(f"horoscope:{user_id}:{date}")
         return True
     except Exception as e:
         logger.error(f"save_daily_horoscope({user_id}, {date}): {e}")
@@ -160,14 +163,37 @@ async def save_daily_horoscope(user_id: str, date: str, horoscope_dict: Dict) ->
 async def get_daily_horoscope_from_db(user_id: str, date: str) -> Optional[Dict]:
     """
     Fetch a stored daily horoscope for a user.
-    Returns None if not yet generated for that date.
+
+    Cache strategy:
+      1. Check Redis (key: horoscope:{user_id}:{date}, TTL 86400s)
+      2. On miss → query MongoDB → store result in Redis
+      3. Returns None if not yet generated for that date.
+
+    This means only the first request of the day hits MongoDB;
+    all subsequent calls are served from Redis (~sub-millisecond).
     """
+    import json
+
+    cache_key = f"horoscope:{user_id}:{date}"
+
+    # ── 1. Redis cache check ─────────────────────────────────────
+    cached = _redis_get(cache_key)
+    if cached is not None:
+        try:
+            return json.loads(cached)
+        except Exception:
+            pass  # corrupted entry — fall through to MongoDB
+
+    # ── 2. MongoDB read ──────────────────────────────────────────
     if not is_connected():
         return None
     try:
         doc = await _db.daily_horoscopes.find_one(
             {"user_id": user_id, "date": date}, {"_id": 0}
         )
+        # ── 3. Populate Redis cache ──────────────────────────────
+        if doc:
+            _redis_set(cache_key, json.dumps(doc, default=str), ttl=86400)
         return doc
     except Exception as e:
         logger.error(f"get_daily_horoscope_from_db({user_id}, {date}): {e}")
@@ -216,6 +242,48 @@ async def get_last_batch_run() -> Optional[Dict]:
 # ─────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────
+
+def _get_redis():
+    """Return a live Redis client, or None if unavailable."""
+    try:
+        from app.services.transit_service import get_redis
+        return get_redis()
+    except Exception:
+        return None
+
+
+def _redis_get(key: str) -> Optional[str]:
+    """Return the Redis value for key, or None on any error."""
+    r = _get_redis()
+    if not r:
+        return None
+    try:
+        return r.get(key)
+    except Exception:
+        return None
+
+
+def _redis_set(key: str, value: str, ttl: int = 86400) -> None:
+    """Set a Redis key with TTL, silently ignoring errors."""
+    r = _get_redis()
+    if not r:
+        return
+    try:
+        r.setex(key, ttl, value)
+    except Exception:
+        pass
+
+
+def _redis_delete(key: str) -> None:
+    """Delete a Redis key, silently ignoring errors."""
+    r = _get_redis()
+    if not r:
+        return
+    try:
+        r.delete(key)
+    except Exception:
+        pass
+
 
 def _serialise(obj):
     """Recursively convert datetime → ISO string, set → list for MongoDB."""
