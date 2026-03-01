@@ -211,6 +211,33 @@ async def count_horoscopes_for_date(date: str) -> int:
         return 0
 
 
+async def delete_old_horoscopes(keep_days: int = 3) -> int:
+    """
+    Delete daily horoscope documents older than `keep_days` days.
+
+    Uses ISO date string comparison (YYYY-MM-DD sorts lexicographically),
+    so no datetime conversion is needed.
+
+    Returns the number of documents deleted.
+    """
+    if not is_connected():
+        logger.warning("MongoDB not connected — skipping old horoscope cleanup")
+        return 0
+    try:
+        from datetime import date as _date
+        cutoff = (_date.today() - timedelta(days=keep_days)).strftime("%Y-%m-%d")
+        result = await _db.daily_horoscopes.delete_many({"date": {"$lt": cutoff}})
+        deleted = result.deleted_count
+        if deleted:
+            logger.info(f"[Cleanup] Deleted {deleted} horoscope docs older than {cutoff} (keep_days={keep_days})")
+        else:
+            logger.info(f"[Cleanup] No horoscope docs older than {cutoff} found")
+        return deleted
+    except Exception as e:
+        logger.error(f"delete_old_horoscopes: {e}")
+        return 0
+
+
 # ─────────────────────────────────────────────
 # Batch job state collection (cron status tracking)
 # ─────────────────────────────────────────────

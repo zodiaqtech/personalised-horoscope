@@ -249,6 +249,10 @@ async def run_daily_batch(date_override: Optional[str] = None) -> Dict:
         f"({duration_secs:.1f}s for {total} users)"
     )
 
+    # ── 5. Purge horoscopes older than 3 days ────────────────────────
+    deleted_old = await db.delete_old_horoscopes(keep_days=3)
+    summary["old_docs_deleted"] = deleted_old
+
     # Persist batch run record
     await db.save_batch_run_status(summary)
 
