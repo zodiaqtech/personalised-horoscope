@@ -54,14 +54,19 @@ def is_connected() -> bool:
 async def get_user_birth_details(user_id: str) -> Optional[Dict]:
     """
     Fetch a single user's birth details from the users collection.
-    Field mapping: name, dob (ISO date), tob (time string), pob (city)
+    Field mapping: name, dob (ISO date), tob (time string), pob/placeOfBirth (city)
+    Normalises place-of-birth to the canonical "pob" key before returning.
     """
     if not is_connected():
         return None
     try:
         from bson import ObjectId
         query = {"_id": ObjectId(user_id)} if len(str(user_id)) == 24 else {"_id": user_id}
-        doc = await _db.users.find_one(query, {"name": 1, "dob": 1, "tob": 1, "pob": 1})
+        doc = await _db.users.find_one(
+            query, {"name": 1, "dob": 1, "tob": 1, "pob": 1, "placeOfBirth": 1}
+        )
+        if doc:
+            doc = _normalise_pob(doc)
         return doc
     except Exception as e:
         logger.error(f"get_user_birth_details({user_id}): {e}")
@@ -70,7 +75,8 @@ async def get_user_birth_details(user_id: str) -> Optional[Dict]:
 
 async def get_all_users_with_birth_details() -> List[Dict]:
     """
-    Return all users who have dob, tob, and pob filled in.
+    Return all users who have dob, tob, and a place-of-birth filled in.
+    Supports both legacy "pob" and newer "placeOfBirth" field names.
     Used by the batch cron job to iterate over eligible users.
     """
     if not is_connected():
@@ -81,13 +87,18 @@ async def get_all_users_with_birth_details() -> List[Dict]:
             {
                 "dob": {"$exists": True, "$ne": None},
                 "tob": {"$exists": True, "$ne": None},
-                "pob": {"$exists": True, "$ne": None},
+                # Accept either field name for place of birth
+                "$or": [
+                    {"pob": {"$exists": True, "$ne": None}},
+                    {"placeOfBirth": {"$exists": True, "$ne": None}},
+                ],
             },
-            {"_id": 1, "name": 1, "dob": 1, "tob": 1, "pob": 1},
+            {"_id": 1, "name": 1, "dob": 1, "tob": 1, "pob": 1, "placeOfBirth": 1},
         )
         users = []
         async for doc in cursor:
             doc["user_id"] = str(doc["_id"])
+            doc = _normalise_pob(doc)
             users.append(doc)
         logger.info(f"Found {len(users)} users with birth details")
         return users
@@ -269,6 +280,19 @@ async def get_last_batch_run() -> Optional[Dict]:
 # ─────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────
+
+def _normalise_pob(doc: Dict) -> Dict:
+    """
+    Normalise place-of-birth to the canonical "pob" key.
+    Handles both legacy "pob" and newer "placeOfBirth" field names.
+    "placeOfBirth" wins if both are somehow present and "pob" is empty.
+    """
+    pob = doc.get("pob") or doc.get("placeOfBirth") or ""
+    doc["pob"] = pob
+    # Remove the raw field so downstream code only sees "pob"
+    doc.pop("placeOfBirth", None)
+    return doc
+
 
 def _get_redis():
     """Return a live Redis client, or None if unavailable."""

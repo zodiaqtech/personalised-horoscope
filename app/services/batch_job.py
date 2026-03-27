@@ -79,7 +79,7 @@ async def _process_user(
             # Compute fresh via VedicAstroAPI (only once per user)
             raw_dob = user.get("dob")
             raw_tob = user.get("tob")
-            pob = user.get("pob", "")
+            pob = user.get("pob") or user.get("placeOfBirth", "")
 
             if not raw_dob or not raw_tob or not pob:
                 result.update({"status": "skipped", "error": "Missing birth details"})
