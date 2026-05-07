@@ -73,6 +73,34 @@ async def get_user_birth_details(user_id: str) -> Optional[Dict]:
         return None
 
 
+async def user_has_birth_details(user_id: str) -> bool:
+    """
+    Return True if the user has dob, tob, and a place-of-birth filled in.
+    This is the condition that makes them eligible for horoscope generation.
+    """
+    if not is_connected():
+        return False
+    try:
+        from bson import ObjectId
+        uid = ObjectId(user_id) if len(str(user_id)) == 24 else user_id
+        doc = await _db.users.find_one(
+            {
+                "_id": uid,
+                "dob": {"$exists": True, "$ne": None},
+                "tob": {"$exists": True, "$ne": None},
+                "$or": [
+                    {"pob": {"$exists": True, "$ne": None}},
+                    {"placeOfBirth": {"$exists": True, "$ne": None}},
+                ],
+            },
+            {"_id": 1},
+        )
+        return doc is not None
+    except Exception as e:
+        logger.error(f"user_has_birth_details({user_id}): {e}")
+        return False
+
+
 async def get_all_users_with_birth_details() -> List[Dict]:
     """
     Return all users who have dob, tob, and a place-of-birth filled in.
