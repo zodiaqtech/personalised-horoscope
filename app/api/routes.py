@@ -117,7 +117,7 @@ async def get_natal(user_id: str):
 # Horoscope — READ from MongoDB (batch pre-generated)
 # ─────────────────────────────────────────────
 
-@router.get("/horoscope/{user_id}", response_model=HoroscopeResponse)
+@router.get("/horoscope/{user_id}")
 async def get_horoscope(
     user_id: str,
     date: Optional[str] = Query(None, description="Date YYYY-MM-DD (default: today IST)"),
@@ -128,21 +128,33 @@ async def get_horoscope(
     Horoscopes are generated in bulk at 00:05 IST by the daily cron job.
     This endpoint is a pure DB read — no computation on request.
 
-    Returns 404 if the batch hasn't run yet for today.
+    Returns 200 in all cases with a message indicating:
+      - horoscope available (with data)
+      - user details present but horoscope pending (within 24 hours)
+      - user details not found in DB
     """
     today_str = date or datetime.now(IST).strftime("%Y-%m-%d")
 
     doc = await db.get_daily_horoscope_from_db(user_id, today_str)
-    if not doc:
-        raise HTTPException(
-            status_code=404,
-            detail=(
-                f"No horoscope found for user_id={user_id} on {today_str}. "
-                "The daily batch runs at 00:05 IST. "
-                "Call POST /batch/trigger to generate immediately."
-            ),
-        )
-    return doc
+    if doc:
+        return {
+            "status": 200,
+            "message": "Horoscope is available",
+            "data": doc,
+        }
+
+    if await db.user_has_birth_details(user_id):
+        return {
+            "status": 200,
+            "message": "User detail available and horoscope to be made available in next 24 hours",
+            "data": None,
+        }
+
+    return {
+        "status": 200,
+        "message": "User detail not available",
+        "data": None,
+    }
 
 
 # ─────────────────────────────────────────────
